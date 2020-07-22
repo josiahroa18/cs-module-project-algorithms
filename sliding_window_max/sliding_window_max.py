@@ -1,12 +1,14 @@
 '''
 Input: a List of integers as well as an integer `k` representing the size of the sliding window
 Returns: a List of integers
+Time Complexity: O(n^2)
+Space Complexity: O(n)
 '''
 def sliding_window_max(nums, k):
-    # Your code here
-
-    pass
-
+    max_arr = []
+    for i in range(len(nums) - k + 1):
+        max_arr.append(max(nums[i:i+k]))
+    return max_arr
 
 if __name__ == '__main__':
     # Use the main function here to test out your implementation 
