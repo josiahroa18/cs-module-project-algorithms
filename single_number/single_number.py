@@ -1,13 +1,10 @@
 '''
 Input: a List of integers where every int except one shows up twice
 Returns: an integer
+# Time Complexity: O(n + n + n) = O(3n) = O(n)
+# Space Complexity: O(n)
 '''
 def single_number(arr):
-    # Time Complexity: O(n + n + n) = O(3n) = O(n)
-    # Space Complexity: O(n)
-    # Go through the list once and store all values into a hash table
-    # Go through the list again and count how many times each value appears
-    # If a value only appears once, return that value
     found = {}
     for num in arr: #O(n)
         if num not in found.keys(): #O(1)
@@ -18,10 +15,19 @@ def single_number(arr):
         if count == 1: #O(1)
             return num
 
+'''
+Optimized Solution
+Time Complexity: O(n)
+Space Complexity: O(1)
+'''
+# def single_number(arr):
+#     for i in range(1, len(arr)):
+#         # If match, arr[0] = 0, if no match, arr[0] = arr[i]
+#         arr[0] ^= arr[i]
+#     return arr[0]
+
 if __name__ == '__main__':
     # Use the main function to test your implementation
     arr = [1, 1, 4, 4, 5, 5, 3, 3, 9, 0, 0]
 
     print(f"The odd-number-out is {single_number(arr)}")
-
-# Can Impvrove on this by sorting the list to bring space complexity to O(1)
