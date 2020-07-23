@@ -4,17 +4,17 @@ Returns: a List of integers
 Time Complexity: O(n)
 Space Complexity: O(n)
 '''
-def moving_zeroes(arr):
-    zero_count = 0
-    new_arr = []
-    for num in arr:
-        if num == 0:
-            zero_count += 1
-        else:
-            new_arr.append(num)
-    for x in range(zero_count):
-        new_arr.append(0)
-    return new_arr
+# def moving_zeroes(arr):
+#     zero_count = 0
+#     new_arr = []
+#     for num in arr:
+#         if num == 0:
+#             zero_count += 1
+#         else:
+#             new_arr.append(num)
+#     for x in range(zero_count):
+#         new_arr.append(0)
+#     return new_arr
         
 '''
 Optimized Solution
